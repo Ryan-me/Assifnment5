@@ -17,7 +17,9 @@ public class A5Q1 {
         this.head = null;
         this.numItems = 0;
     }
-
+/*
+ * add in the next node in the right number spot
+ */
     public void add(int num) {
         // start at beginning of the list
         IntNode node = this.head;
@@ -25,6 +27,7 @@ public class A5Q1 {
         if (node == null) {
             IntNode temp = new IntNode(num);
             this.head = temp;
+            // if it's not the first number in the list
         } else if (this.head.getNum() >= num) {
             IntNode temp = new IntNode(num);
             temp.setNext(this.head);
@@ -36,15 +39,11 @@ public class A5Q1 {
                 System.out.println("hello");
                 node = node.getNext();
             }
+            //make the temp node to add it
             IntNode temp = new IntNode(num);
             temp.setNext(node.getNext());
             // change node pointer
             node.setNext(temp);
-            // if node has nowhere to go
-            // create new node
-            //IntNode temp = new IntNode(num);
-            // insert it into the list
-            //node.setNext(temp);
         }
         // increase the size counter
         this.numItems++;
@@ -53,11 +52,15 @@ public class A5Q1 {
     public int size() {
         return this.numItems;
     }
-
+/*
+ * returmn if the list is empty
+ */
     public boolean isEmpty() {
         return this.numItems == 0;
     }
-
+/*
+ * get the number at the right position
+ */
     public int get(int pos) {
         IntNode node = this.head;
         // move the number of items

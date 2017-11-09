@@ -15,13 +15,17 @@ public class A5Q2 {
     private int listtotal;
     // keep track of the size of the array
     private int size;
-
+/*
+ * initialize the variables
+ */
     public A5Q2() {
         this.size = 10;
         this.list = new int[this.size];
         this.listtotal = 0;
     }
-
+/*
+ * add the new number in the right spot
+ */
     public void add(int index, int num) {
 
         // make sure the array is the right size
@@ -47,23 +51,35 @@ public class A5Q2 {
         this.listtotal++;
 
     }
-
+    /*
+     * remove a number in the list
+     */
     public void remove(int index) {
+        // set the current value of the index to zero
         this.list[index] = 0;
+        // remove the empty spot in the list
         for (int i = index; i < this.listtotal; i++) {
             this.list[i] = this.list[i + 1];
         }
         this.listtotal--;
     }
-
+    /*
+     * return the number of numbers in the list
+     */
     public int size() {
         return this.listtotal;
     }
-
+    /*
+     * return if there is nothing in the list
+     */
     public boolean isEmpty() {
         return listtotal == 0;
     }
-
+/**
+ * 
+ * @param index
+ * @return the number at the specified location t
+ */
     public int get(int index) {
         return this.list[index];
     }
