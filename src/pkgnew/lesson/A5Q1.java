@@ -17,9 +17,10 @@ public class A5Q1 {
         this.head = null;
         this.numItems = 0;
     }
-/*
- * add in the next node in the right number spot
- */
+    /*
+     * add in the next node in the right number spot
+     */
+
     public void add(int num) {
         // start at beginning of the list
         IntNode node = this.head;
@@ -52,15 +53,17 @@ public class A5Q1 {
     public int size() {
         return this.numItems;
     }
-/*
- * returmn if the list is empty
- */
+    /*
+     * returmn if the list is empty
+     */
+
     public boolean isEmpty() {
         return this.numItems == 0;
     }
-/*
- * get the number at the right position
- */
+    /*
+     * get the number at the right position
+     */
+
     public int get(int pos) {
         IntNode node = this.head;
         // move the number of items
@@ -70,6 +73,12 @@ public class A5Q1 {
         return node.getNum();
     }
 
+    /**
+     * remove a number at the specified index then reformat the list to keep the
+     * list in order
+     *
+     * @param num
+     */
     public void remove(int num) {
         // if removing from start
         if (this.head.getNum() == num) {
